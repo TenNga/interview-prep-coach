@@ -20,7 +20,7 @@ const InterviewPage = () => {
 
                 {questions.length && (
                     <div className="mt-6">
-                        <h3 className="text-lg font-semibold">Generated Questions:</h3>
+                        <h3 className="text-lg font-semibold"> 🤖 AI-Generated Questions:</h3>
                         {questions.map((q,i) => (
                             <QuestionCard key={i} question={q} />
                         ))}
