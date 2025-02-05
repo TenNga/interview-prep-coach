@@ -7,8 +7,8 @@ const JobDescriptionInput = () => {
     }
 
     return(
-        <form action="">
-                <textarea name="description" id="job-desc" rows={4} placeholder="Enter job description here..." value={description} onChange={()=>setDescription(e.target.value)} />
+        <form onSubmit={handleSubmit}>
+                <textarea name="description" id="job-desc" rows={4} placeholder="Enter job description here..." value={description} onChange={(e)=>setDescription(e.target.value)} />
                 <button type="submit">Generate Question</button>
             </form>
     )
