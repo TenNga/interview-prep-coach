@@ -1,9 +1,16 @@
-import { useState } from "react";
+'use client'
 
-const JobDescriptionInput = () => {
+import { useState } from "react";
+interface JobInputProps {
+    onSubmit:(jobDescription: string)=>void
+}
+
+const JobDescriptionInput = ({onSubmit}:JobInputProps) => {
     const [description, setDescription] = useState("")
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        if (description.trim() === "") return;
+        onSubmit(description)
     }
 
     return(

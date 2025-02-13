@@ -1,20 +1,21 @@
+'use client'
+
 import Header from "@/components/Header";
 import JobDescriptionInput from "@/components/JobDescriptionInput";
 import QuestionCard from "@/components/QuestionCard";
 import { useState } from "react";
+import { useGenerateQuestion } from "../hooks/useGenerateQuestion";
 
 const InterviewPage = () => {
 
-    const [questions, setQuestions] = useState<string[]>([]);
-    const [loading, isLoading] = useState(false);
-
+    const {loading, questions, generateQuestions } = useGenerateQuestion();
 
     return(
         <main>
             <Header />
             <div className="m-lg">
                 <h2>Enter Job Description Below</h2>
-                <JobDescriptionInput />
+                <JobDescriptionInput onSubmit={generateQuestions} />
 
                 {loading && <p className="mt-4 text-blue-600">Generating question...</p>}
 
