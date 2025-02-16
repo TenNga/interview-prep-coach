@@ -15,8 +15,8 @@ const JobDescriptionInput = ({onSubmit}:JobInputProps) => {
 
     return(
         <form onSubmit={handleSubmit}>
-                <textarea name="description" id="job-desc" rows={4} placeholder="Enter job description here..." value={description} onChange={(e)=>setDescription(e.target.value)} />
-                <button type="submit">Generate Question</button>
+                <textarea name="description" id="job-desc" rows={4} placeholder="Enter job description here..." value={description} onChange={(e)=>setDescription(e.target.value)} className="border py-3 px-2 w-[350px]"/>
+                <button type="submit" className="block py-3 px-5 bg-blue-600 rounded-lg text-white font-semibold">Generate Question</button>
             </form>
     )
 };
