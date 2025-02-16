@@ -19,7 +19,8 @@ export function useGenerateQuestion() {
             }
 
             const data = await resp.json();
-            setQuestions(data.questions);  
+            console.log("DATA AT HOOKS: ",data)
+            // setQuestions(data.questions);  
         } catch (error) {
             console.error("Error: ",error);
         } finally {
