@@ -1,7 +1,12 @@
 import { useState } from "react";
 
+interface EachQuestion  {
+    header: string,
+    questions: string[]
+}
+
 export function useGenerateQuestion() {
-    const [ questions, setQuestions ] = useState<string[]>([]);
+    const [ questions, setQuestions ] = useState<EachQuestion[]>([]);
     const [loading, setIsLoading] = useState(false);
 
     const generateQuestions = async (jobDescription: string) => {
@@ -19,8 +24,8 @@ export function useGenerateQuestion() {
             }
 
             const data = await resp.json();
-            console.log("DATA AT HOOKS: ",data)
-            // setQuestions(data.questions);  
+            console.log("DATA AT HOOKS: ",data.questions)
+            setQuestions(data.questions);  
         } catch (error) {
             console.error("Error: ",error);
         } finally {
