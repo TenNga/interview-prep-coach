@@ -1,37 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interview Question Generator & Response Feedback System
 
-## Getting Started
+## Project Goals
 
-First, run the development server:
+- **Generate Interview Questions** 🎯: Automatically generate relevant interview questions based on a given job description.
+- **Evaluate Candidate Responses** 📝: Provide AI-generated feedback on candidate responses to interview questions.
+- **Contextual Understanding** 🧠: Ensure that the generated questions and response feedback are relevant to the provided job description.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Job Description-based Interview Question Generation** 📋: Users can input a job description, and the system will generate a list of interview questions tailored to the job role.
+- **AI-Generated Response Feedback** 🤖: Users can submit their responses to interview questions, and the system will analyze and provide feedback on clarity, relevance, and depth of the response.
+- **Context Preservation** 🔄: The system maintains the context of the job description throughout the process to ensure consistent question generation and feedback.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technologies
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 13** ⚛️
+- **OpenAI GPT-4** 💡
+- **Tailwind CSS** 🌿
+- **Axios** 🌐
 
-## Learn More
+## Project Status
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# interview-prep-coach" 
+- The project is currently in progress. Features are being developed and refined. 🚧
