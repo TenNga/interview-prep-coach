@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { EachQuestion } from "../types";
+import { EachQuestion, GenerateFeedbackProps } from "../types";
 
-export function useGenerateQuestion() {
-    const [ questions, setQuestions ] = useState<EachQuestion[]>([]);
+export function useResponseFeedback() {
+    const [ response, setResponse ] = useState<EachQuestion[]>([]);
     const [loading, setIsLoading] = useState(false);
 
-    const generateQuestions = async (jobDescription: string) => {
+    const generateFeedback = async ({userResponse, question, jobDescription} : GenerateFeedbackProps) => {
         setIsLoading(true);
 
         try{
-          const resp = await fetch('/api/generateQuestions', {
+          const resp = await fetch('/api/evaluateResponse', {
                 method: 'POST',
-                body: JSON.stringify({jobDescription}),
+                body: JSON.stringify({userResponse, question, jobDescription}),
                 headers: { "Content-Type": "application/json"},
             });
 
@@ -21,7 +21,7 @@ export function useGenerateQuestion() {
 
             const data = await resp.json();
             console.log("DATA AT HOOKS: ",data.questions)
-            setQuestions(data.questions);  
+            setResponse(data.questions);  
         } catch (error) {
             console.error("Error: ",error);
         } finally {
@@ -30,5 +30,5 @@ export function useGenerateQuestion() {
         
     }
 
-    return {questions, loading, generateQuestions };
+    return {response, loading, generateFeedback };
 }

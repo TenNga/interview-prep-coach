@@ -1,9 +1,5 @@
-interface QuestionCardProps {
-    question: {
-        header: string,
-        questions:string[]
-    }
-}
+import { QuestionCardProps } from "@/app/types";
+import EachQuestion from "./EachQuestion";
 
 const QuestionCard:React.FC<QuestionCardProps> = ({question}) => {
     return(
@@ -11,7 +7,7 @@ const QuestionCard:React.FC<QuestionCardProps> = ({question}) => {
             <h3 className="text-lg font-semibold">{question.header}</h3>
             {question.questions?.map(each=>{
                 return(
-                    <p key={each}>{each}</p>
+                    <EachQuestion key={each} question={each} />
                 )
             })}
         </div>
