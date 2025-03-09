@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
+import { JobDescriptionProvider } from "./api/contexts/JobDescriptionContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[1050px] mx-auto`}
       >
-        {children}
+        <JobDescriptionProvider>
+          {children}
+        </JobDescriptionProvider>
       </body>
     </html>
   );

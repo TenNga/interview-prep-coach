@@ -34,3 +34,8 @@ export interface GenerateFeedbackProps {
     question: string,
     userResponse: string
 }
+
+export interface JobDescriptionContextType {
+    jobDescription: string;
+    setJobDescription: (jobDescription: string) => void;
+}
