@@ -18,6 +18,7 @@
 - **OpenAI GPT-4** 💡
 - **Tailwind CSS** 🌿
 - **Axios** 🌐
+- More tools coming while I improves its features (Backends)
 
 ## Project Status
 
