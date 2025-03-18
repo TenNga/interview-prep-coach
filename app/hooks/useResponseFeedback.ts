@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { EachQuestion, GenerateFeedbackProps } from "../types";
+import { EachFeedback, EachQuestion, GenerateFeedbackProps } from "../types";
 
 export function useResponseFeedback() {
-    const [ response, setResponse ] = useState<EachQuestion[]>([]);
+    const [ response, setResponse ] = useState<EachFeedback | null>(null);
     const [loading, setIsLoading] = useState(false);
 
     const generateFeedback = async ({userResponse, question, jobDescription} : GenerateFeedbackProps) => {
@@ -20,8 +20,8 @@ export function useResponseFeedback() {
             }
 
             const data = await resp.json();
-            console.log("DATA AT HOOKS: ",data.questions)
-            setResponse(data.questions);  
+            // console.log("DATA AT HOOKS: ",data.feedback)
+            setResponse(data.feedback);  
         } catch (error) {
             console.error("Error: ",error);
         } finally {

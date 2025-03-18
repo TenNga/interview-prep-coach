@@ -78,15 +78,15 @@ export async function POST(req: Request) {
       response.data.choices[0].message.content
     );
     return NextResponse.json({
-      questions: JSON.parse(response.data.choices[0].message.content),
+      feedback: JSON.parse(response.data.choices[0].message.content)
     });
   } catch (error: any) {
     console.error(
-      "🔥 Error generating questions:",
+      "🔥 Error generating feedback:",
       error.response?.data || error.message
     );
     return NextResponse.json(
-      { error: "Failed to generate questions" },
+      { error: "Failed to generate feedback" },
       { status: 500 }
     );
   }
