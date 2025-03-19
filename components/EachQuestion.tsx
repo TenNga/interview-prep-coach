@@ -17,8 +17,10 @@ const EachQuestion = ({ question }: QuestionType) => {
     const [showForm, setShowForm] = useState(false);
     const [userResponse, setUserResponse] = useState("");
     const {jobDescription, setJobDescription} = useJobDescription();
-    const {response, loading, generateFeedback} = useResponseFeedback();
     const [feedback, setFeedback] = useState("");
+
+    const {response, loading, generateFeedback} = useResponseFeedback();
+
     const handleResponse = (e: React.FormEvent) => {
         e.preventDefault();
         if (userResponse?.trim() === "") return;
@@ -39,7 +41,7 @@ const EachQuestion = ({ question }: QuestionType) => {
             }
             {response && <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
-        <AccordionTrigger>clarity {response.clarity?.score}</AccordionTrigger>
+        <AccordionTrigger>clarity {response?.clarity?.score}</AccordionTrigger>
         <AccordionContent>
         {response.clarity?.feedback}
         </AccordionContent>

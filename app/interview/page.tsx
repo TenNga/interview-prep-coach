@@ -9,6 +9,7 @@ import { useGenerateQuestion } from "../hooks/useGenerateQuestion";
 const InterviewPage = () => {
 
     const {loading, questions, generateQuestions } = useGenerateQuestion();
+    
 
     return(
         <main>

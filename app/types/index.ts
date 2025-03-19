@@ -15,7 +15,7 @@ export interface EachQuestion  {
 }
 
 export type feedbackType = {
-    score: number,
+    score: number | string,
     feedback: string
 } 
 

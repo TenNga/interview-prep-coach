@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EachFeedback, EachQuestion, GenerateFeedbackProps } from "../types";
+import { EachFeedback, GenerateFeedbackProps } from "../types";
 
 export function useResponseFeedback() {
     const [ response, setResponse ] = useState<EachFeedback | null>(null);
@@ -19,8 +19,8 @@ export function useResponseFeedback() {
                 throw new Error("Failed to generate questions.");
             }
 
-            const data = await resp.json();
-            // console.log("DATA AT HOOKS: ",data.feedback)
+            const data = await resp.json()
+            console.log("DATA AT HOOKS: ",data.feedback)
             setResponse(data.feedback);  
         } catch (error) {
             console.error("Error: ",error);

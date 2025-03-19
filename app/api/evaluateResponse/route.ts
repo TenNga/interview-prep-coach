@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
+import { EachFeedback } from "@/app/types";
 
 export async function POST(req: Request) {
   try {
@@ -77,8 +78,8 @@ export async function POST(req: Request) {
       "✅ OpenAI Response:",
       response.data.choices[0].message.content
     );
-    return NextResponse.json({
-      feedback: JSON.parse(response.data.choices[0].message.content)
+    return NextResponse.json<{feedback:EachFeedback}>({
+      feedback: response.data.choices[0].message.content
     });
   } catch (error: any) {
     console.error(
