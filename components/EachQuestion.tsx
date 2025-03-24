@@ -11,6 +11,7 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
+import { FeedbackAccordion } from './ui/FeedbackAccordion';
 
 const EachQuestion = ({ question }: QuestionType) => {
 
@@ -38,27 +39,8 @@ const EachQuestion = ({ question }: QuestionType) => {
                     <Button className="rounded-lg" type="submit" variant="outline">{loading? 'loading' : 'Submit'}</Button>
                 </form>
             }
-            {/* {response && <p>{response.clarity.score}</p>} */}
-            {response && <Accordion type="single" collapsible className="w-full">
-      <AccordionItem value="item-1">
-        <AccordionTrigger className="capitalize font-semibold">clarity {response?.clarity?.score}</AccordionTrigger>
-        <AccordionContent>
-        {response.clarity?.feedback}
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger>depth {response.depth?.score}</AccordionTrigger>
-        <AccordionContent>
-        {response.depth?.feedback}
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger>Relevance {response.relevance?.score}</AccordionTrigger>
-        <AccordionContent>
-        {response.relevance?.feedback}
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>}
+           
+            {response && <FeedbackAccordion response={response} />}
         </div>
     )
 };

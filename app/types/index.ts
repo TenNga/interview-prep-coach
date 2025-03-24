@@ -35,3 +35,8 @@ export interface JobDescriptionContextType {
     jobDescription: string;
     setJobDescription: (jobDescription: string) => void;
 }
+
+
+export interface FeedbackAccordionProps {
+    response: EachFeedback
+  }
