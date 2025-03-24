@@ -41,7 +41,7 @@ const EachQuestion = ({ question }: QuestionType) => {
             {/* {response && <p>{response.clarity.score}</p>} */}
             {response && <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
-        <AccordionTrigger>clarity {response?.clarity?.score}</AccordionTrigger>
+        <AccordionTrigger className="capitalize font-semibold">clarity {response?.clarity?.score}</AccordionTrigger>
         <AccordionContent>
         {response.clarity?.feedback}
         </AccordionContent>
@@ -53,9 +53,9 @@ const EachQuestion = ({ question }: QuestionType) => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated? {typeof response}</AccordionTrigger>
+        <AccordionTrigger>Relevance {response.relevance?.score}</AccordionTrigger>
         <AccordionContent>
-          Yes. It's animated by default, but you can disable it if you prefer.
+        {response.relevance?.feedback}
         </AccordionContent>
       </AccordionItem>
     </Accordion>}
