@@ -47,21 +47,23 @@ export async function POST(req: Request) {
         Question: ${question}
         User Response: "${userResponse}"
 
-        Format your response as:
+        Format your response as following, without markdown format like 'json' before the data:
         {
-          clarity: {
-            score: <score out of 10>,
-            feedback: "<feedback>"
+          "clarity": {
+            "score": <score out of 10>,
+            "feedback": "<feedback>"
           },
-          depth: {
-            score: <score out of 10>,
-            feedback: "<feedback>"
+          "depth": {
+            "score": <score out of 10>,
+            "feedback": "<feedback>"
           },
-          relevance: {
-            score: <score out of 10>,
-            feedback: "<feedback>"
+          "relevance": {
+            "score": <score out of 10>,
+            "feedback": "<feedback>"
           }
-        }`,
+        }
+          
+        Only return the JSON, no additional text, no explanations, no summaries.`,
           },
         ],
         temperature: 0.7,
@@ -78,9 +80,7 @@ export async function POST(req: Request) {
       "✅ OpenAI Response:",
       response.data.choices[0].message.content
     );
-    return NextResponse.json<{feedback:EachFeedback}>({
-      feedback: response.data.choices[0].message.content
-    });
+    return NextResponse.json(JSON.parse(response.data.choices[0].message.content));
   } catch (error: any) {
     console.error(
       "🔥 Error generating feedback:",

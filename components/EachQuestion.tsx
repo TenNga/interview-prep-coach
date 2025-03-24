@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { QuestionType } from "@/app/types";
+import { EachFeedback, QuestionType } from "@/app/types";
 import { Textarea } from "@/components/ui/textarea"
 import { NotebookPen } from 'lucide-react';
 import useJobDescription from '@/app/hooks/useJobDescription';
@@ -17,7 +17,6 @@ const EachQuestion = ({ question }: QuestionType) => {
     const [showForm, setShowForm] = useState(false);
     const [userResponse, setUserResponse] = useState("");
     const {jobDescription, setJobDescription} = useJobDescription();
-    const [feedback, setFeedback] = useState("");
 
     const {response, loading, generateFeedback} = useResponseFeedback();
 
@@ -39,6 +38,7 @@ const EachQuestion = ({ question }: QuestionType) => {
                     <Button className="rounded-lg" type="submit" variant="outline">{loading? 'loading' : 'Submit'}</Button>
                 </form>
             }
+            {/* {response && <p>{response.clarity.score}</p>} */}
             {response && <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
         <AccordionTrigger>clarity {response?.clarity?.score}</AccordionTrigger>
@@ -53,7 +53,7 @@ const EachQuestion = ({ question }: QuestionType) => {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated? {typeof(response)}</AccordionTrigger>
+        <AccordionTrigger>Is it animated? {typeof response}</AccordionTrigger>
         <AccordionContent>
           Yes. It's animated by default, but you can disable it if you prefer.
         </AccordionContent>
