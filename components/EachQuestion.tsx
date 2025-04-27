@@ -29,14 +29,14 @@ const EachQuestion = ({ question }: QuestionType) => {
 
     return (
         <div>
-            <div className="flex justify-between">
+            <div className="flex flex-col items-start mt-3">
                 <p>{question}</p>
-                <Button onClick={() => setShowForm(!showForm)}><NotebookPen /> write</Button>
+                <Button onClick={() => setShowForm(!showForm)}><NotebookPen /> Your answer</Button>
             </div>
             {showForm &&
                 <form className="flex flex-col items-start w-1/2 my-4" onSubmit={handleResponse}>
                     <Textarea className="w-full rounded-lg mb-4" placeholder="Type your answer here." id="user-answer" onChange={(e)=>setUserResponse(e.target.value)}/>
-                    <Button className="rounded-lg" type="submit" variant="outline">{loading? 'loading' : 'Submit'}</Button>
+                    <Button className="rounded-lg" type="submit" variant="outline">{loading? 'loading' : 'Check'}</Button>
                 </form>
             }
            

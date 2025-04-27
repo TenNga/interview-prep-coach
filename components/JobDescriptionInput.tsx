@@ -65,9 +65,9 @@ Bonus: strong copywriting skills and a working knowledge of SEO.
 
     return(
         <form onSubmit={handleSubmit}>
-                <textarea name="description" id="job-desc" rows={4} placeholder="Enter job description here..." value={jobDescription} onChange={(e)=>setJobDescription(e.target.value)} className="border py-3 px-2 w-[350px]"/>
-                <button type="submit" className="block py-3 px-5 bg-blue-600 rounded-lg text-white font-semibold">{isLoading? "Getting questions" : "Generate Question"}</button>
-                <button type="button" className="block py-3 mt-5 px-5 bg-blue-600 rounded-lg text-white font-semibold" onClick={handleExampleJob}>Example Job</button>
+                <textarea name="description" id="job-desc" rows={4} placeholder="Enter job description here..." value={jobDescription} onChange={(e)=>setJobDescription(e.target.value)} className="border py-3 px-2 w-full rounded-[12px] bg-gray-800 border-gray-600 text-gray-50 mb-3"/>
+                <button type="submit" className="block py-3 px-5 bg-blue-900 rounded-lg text-white font-semibold rounded-[12px]">{isLoading? "Getting questions" : "Generate Question"}</button>
+                <button type="button" className="block py-3 mt-5 px-5 bg-blue-900 rounded-lg text-white font-semibold" onClick={handleExampleJob}>Example Job</button>
             </form>
     )
 };

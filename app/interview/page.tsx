@@ -12,10 +12,10 @@ const InterviewPage = () => {
     
 
     return(
-        <main>
+        <main className="p-10 ">
             <Header />
             <div className="mt-6">
-                <h2>Enter Job Description Below</h2>
+                <h2 className="text-lg mb-3">Enter Job Description Below</h2>
                 <JobDescriptionInput onSubmit={generateQuestions} isLoading={loading} />
                 <h1>Question Length: {questions.length}</h1>
                 {/* {loading && <p className="mt-4 text-blue-600">Generating question...</p>} */}
